@@ -5,7 +5,7 @@
 ; Date: 01/03/2024     Modified by: Muhammad Arhum
 
 .386
-.model flat,stdcall
+.model flat, stdcall
 .stack 4096
 INCLUDE irvine32.inc
 ExitProcess PROTO, dwExitCode:DWORD
