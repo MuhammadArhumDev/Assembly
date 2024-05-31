@@ -138,8 +138,8 @@ menu PROC
 menu ENDP
 
 adminLogin PROC
-    LOCAL username[20]:DWORD
-    LOCAL password[20]:DWORD
+    LOCAL username:DWORD
+    LOCAL password:DWORD
 
     mov edx, OFFSET enter_username_prompt
     call WriteString
@@ -236,11 +236,11 @@ record_login PROC
 record_login ENDP
 
 addQuestion PROC
-    LOCAL quest[100]:DWORD
-    LOCAL op1[50]:DWORD
-    LOCAL op2[50]:DWORD
-    LOCAL op3[50]:DWORD
-    LOCAL op4[50]:DWORD
+    LOCAL quest:DWORD
+    LOCAL op1:DWORD
+    LOCAL op2:DWORD
+    LOCAL op3:DWORD
+    LOCAL op4:DWORD
     LOCAL ans:DWORD
 
     mov edx, OFFSET enterQuestMSG
@@ -327,11 +327,11 @@ deleteQuestion ENDP
 modifyQuestion PROC
     LOCAL choice: DWORD
     LOCAL index: DWORD
-    LOCAL newQuest[100]: DWORD
-    LOCAL newOp1[50]: DWORD
-    LOCAL newOp2[50]: DWORD
-    LOCAL newOp3[50]: DWORD
-    LOCAL newOp4[50]: DWORD
+    LOCAL newQuest: DWORD
+    LOCAL newOp1: DWORD
+    LOCAL newOp2: DWORD
+    LOCAL newOp3: DWORD
+    LOCAL newOp4: DWORD
     LOCAL newAns: BYTE
 
     mov edx, OFFSET enterSapMSG
