@@ -297,12 +297,32 @@ addQuestion PROC
 addQuestion ENDP
 
 deleteQuestion PROC
-    mov eax, counter
-    dec eax
-    mov counter, eax
-    ret
+    LOCAL indexToDelete: DWORD
+    LOCAL i: DWORD
 
+    mov edx, OFFSET enterSapMSG
+    call WriteString
+    call ReadInt
+    mov indexToDelete, eax
+
+    cmp indexToDelete, counter
+    jae deleteQuestion_end
+
+    mov questsArray[indexToDelete].quest, '',0
+    mov questsArray[indexToDelete].op1, '',0
+    mov questsArray[indexToDelete].op2, '',0
+    mov questsArray[indexToDelete].op3, '',0
+    mov questsArray[indexToDelete].op4, '',0
+    mov questsArray[indexToDelete].ans, '',0
+
+    deleteQuestion_skip_move:
+    dec counter
+
+deleteQuestion_end:
+    ret
 deleteQuestion ENDP
+
+
 
 modifyQuestion PROC
     LOCAL choice: DWORD
