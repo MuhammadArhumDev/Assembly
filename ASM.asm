@@ -27,14 +27,14 @@ ExitProcess PROTO, dwExitCode:DWORD
     enter_password_prompt BYTE "Enter password: ", 0
     welcome_admin BYTE "Welcome, admin!", 0
 
-    userRecord STRUC
+    userRecord STRUCT
         sapId DWORD ?
         pass DWORD 20 DUP (?)
     userRecord ENDS
 
     recordArray userRecord <>
 
-    quests STRUC
+    quests STRUCT
         quest DWORD 100 DUP (?)
         op1 DWORD 50 DUP (?)
         op2 DWORD 50 DUP (?)
